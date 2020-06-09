@@ -6,7 +6,7 @@ import {Navbar,ProductsRenderer} from './components'
  class App extends Component {
   render() {
     return (
-      <div className = "container">
+      <div className = "container" >
         <Navbar/>
         <ProductsRenderer/>
       </div>
