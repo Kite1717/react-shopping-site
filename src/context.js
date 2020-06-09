@@ -7,23 +7,27 @@ const reducer = (state,action) =>{
         switch(action.type)
         {
           case "FILTER_PRODUCTS":
+           
           return{
              ...state,
                
              filteredProducts :  (action.payload === -1) 
-             ? [...state.products]
+             ? [...state.products] 
              :  state.products.filter((product) =>{
 
                 return product.productCategory.some( (category) => 
                   category.categoryId === action.payload)
              })
 
+            
+
+
           }
-          case "ADD_USER":
+          case "CALC_PRODUCT_COUNT":
           return{
              ...state, 
              
-             users :[...state.users,action.payload]
+              totalProduct : state.filteredProducts.length
           }
 
           default :
@@ -42,6 +46,7 @@ export  class Provider extends Component {
 
     products : [],
     categories : [],
+    totalProduct : 0,
     filteredProducts : [],
     dispatch : action =>{  
 
@@ -65,6 +70,7 @@ export  class Provider extends Component {
     this.setState({
       products : response1.data,
       filteredProducts : response1.data,
+      totalProduct : response1.data.length,
       categories : response2.data
       
     })
