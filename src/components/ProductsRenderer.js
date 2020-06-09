@@ -18,7 +18,7 @@ import Consumer from '../context'
                    
                     {
                             products.map(product =>{
-                                console.log(product)
+                               // console.log(product)
                                 return(
                                  
                                     <div key = {product.id} className="p-2">
