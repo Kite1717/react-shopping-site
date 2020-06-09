@@ -17,6 +17,7 @@ import Consumer from '../context'
     filterProducts = (dispatch,id,curCategory) =>{
 
         dispatch({type : "FILTER_PRODUCTS",payload : id})
+       dispatch({type: "CALC_PRODUCT_COUNT"})
 
         this.changeCategoryName(curCategory)
 
@@ -50,13 +51,13 @@ import Consumer from '../context'
             <Consumer>
                 {
                     value =>{
-                        const {categories,dispatch} = value
+                        const {categories,dispatch,totalProduct} = value
                         const {curCategory} = this.state
                 
                         return (  
                         <div>
                             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                            <div className="navbar-brand mr-5" >Shopping Site</div>
+                            <div className="navbar-brand mr-5 mb-5" >Shopping Site</div>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
@@ -74,8 +75,8 @@ import Consumer from '../context'
                                              this.getCategories(categories,dispatch)
                                          }
                                     </li>
-                                        <li class="list-group-item list-group-item-dark ml-4">Current Category : {curCategory}</li>
-                                  
+                                        <li  style = {{fontWeight : "bold" , fontSize : "16px"}}class="list-group-item  ml-4">Current Category :  {curCategory}   <br/>  Total Product : {totalProduct} </li>
+                                       
                                
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0">
