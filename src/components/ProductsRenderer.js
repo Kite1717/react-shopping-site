@@ -14,20 +14,25 @@ import Consumer from '../context'
                 const {products} = value;  // page handler  and data
                  
                 return (
-                    <div>
-                    <ul  className="list-group">
+                    <div  className = "d-flex align-content-start flex-wrap">
+                   
                     {
                             products.map(product =>{
                                 console.log(product)
                                 return(
-                                <li key = {product.id} className="list-group-item list-group-item-warning">
-                                <Product data  = {product} />
-                                </li>
+                                 
+                                    <div key = {product.id} className="p-2">
+                                    <Product data  = {product} />
+                                    </div>
+                                 
+
+                                 
+                                
                                 )
                             
                             })
                     }
-                    </ul>
+                    
                 </div>            
                 )
               } 
