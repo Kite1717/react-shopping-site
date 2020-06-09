@@ -11,7 +11,7 @@ import Consumer from '../context'
     
               value =>{
                 
-                const {products} = value;  // page handler  and data
+                const {filteredProducts : products} = value;  // page handler  and data
                  
                 return (
                     <div  className = "d-flex align-content-start flex-wrap">
