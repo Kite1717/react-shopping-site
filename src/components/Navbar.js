@@ -31,7 +31,7 @@ import Consumer from '../context'
                         //console.log(category);
                           return(
                               <div key = {category.id}>
-                                  <a  onClick = {this.filterProducts.bind(this,dispatch,category.id,category.name) } id = {category.id} className="btn btn-info btn-block" href="#">{category.name}</a>
+                                  <a  onClick = {this.filterProducts.bind(this,dispatch,category.id,category.name) } id = {category.id} className="btn btn-info btn-block" href="/#" >{category.name}</a>
                                   <div className="dropdown-divider"></div>
                               </div>
                           )
@@ -65,17 +65,17 @@ import Consumer from '../context'
                             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                                     <li className="nav-item active">
-                                        <a  onClick = {this.filterProducts.bind(this,dispatch,-1,"All")} type = "button"className="btn btn-primary" href="#">All Products <span className="sr-only">(current)</span></a>
+                                        <a  onClick = {this.filterProducts.bind(this,dispatch,-1,"All")} type = "button"className="btn btn-primary" href="/#">All Products <span className="sr-only">(current)</span></a>
                                     </li>
                                     <li className="nav-item dropdown">
-                                        <a className="nav-link dropdown-toggle ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a className="nav-link dropdown-toggle ml-3" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Categories
                                         </a>
                                          {
                                              this.getCategories(categories,dispatch)
                                          }
                                     </li>
-                                        <li  style = {{fontWeight : "bold" , fontSize : "16px"}}class="list-group-item  ml-4">Current Category :  {curCategory}   <br/>  Total Product : {totalProduct} </li>
+                                        <li  style = {{fontWeight : "bold" , fontSize : "16px"}}className="list-group-item  ml-4">Current Category :  {curCategory}   <br/>  Total Product : {totalProduct} </li>
                                        
                                
                                 </ul>

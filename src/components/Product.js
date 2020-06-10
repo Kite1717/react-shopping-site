@@ -33,7 +33,7 @@ import logo from '../assets/no_image.png';
             <div className="card-footer">
                 <h5 className="card-title"> Price : {data.price}</h5>
                 <h5 className="card-title">Release date : {data.year}</h5>
-                <a href="#" className="btn btn-success btn-lg btn-block">Add Cart</a>
+                <a href="/#" className="btn btn-success btn-lg btn-block">Add Cart</a>
             </div>
           </div>
         )
