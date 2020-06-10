@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Product from './Product' 
 
-import Consumer from '../context'
+import Consumer from '../util/context'
  class ProductsRenderer extends Component {
     render() {
         return (
