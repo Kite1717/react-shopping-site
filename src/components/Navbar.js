@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react'
 
-import Consumer from '../context'
+import Consumer from '../util/context'
+
   class Navbar extends Component {
 
 
@@ -14,14 +15,17 @@ import Consumer from '../context'
             curCategory : name
         })
     }
+
     filterProducts = (dispatch,id,curCategory) =>{
 
         dispatch({type : "FILTER_PRODUCTS",payload : id})
        dispatch({type: "CALC_PRODUCT_COUNT"})
+       dispatch({type: "CHANGE_PAGE",payload : "Product_Renderer"})
 
         this.changeCategoryName(curCategory)
 
     }
+
     getCategories = (categories,dispatch) =>{
       
         return(
@@ -40,10 +44,13 @@ import Consumer from '../context'
             </div>
         )
        
-       
-        
-
       
+    }
+
+    openCartPage = (dispatch) =>{
+
+    dispatch({type: "CHANGE_PAGE",payload : "Cart"})
+
     }
 
     render() {
@@ -83,6 +90,7 @@ import Consumer from '../context'
                                 <input className="form-control mr-sm-2" type="search" placeholder="Search"/>
                                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                                 </form>
+                                <button onClick = {this.openCartPage.bind(this,dispatch)} type="button" className="btn btn-success ml-5">Show Your Cart</button>
                             </div>
                             </nav>
                         </div>
