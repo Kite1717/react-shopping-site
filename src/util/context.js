@@ -30,6 +30,12 @@ const reducer = (state,action) =>{
               totalProduct : state.filteredProducts.length
           }
 
+          case "CHANGE_PAGE":
+          return{
+             ...state, 
+             currentPage : action.payload
+          }
+
           default :
           return state
         }
@@ -43,11 +49,11 @@ const Context = React.createContext();
 export  class Provider extends Component {
 
   state = {
-
     products : [],
     categories : [],
     totalProduct : 0,
     filteredProducts : [],
+    currentPage : "Product_Renderer",
     dispatch : action =>{  
 
       this.setState(state =>reducer(state,action))
