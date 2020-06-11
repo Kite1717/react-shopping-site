@@ -16,6 +16,7 @@ import Consumer from '../util/context'
         })
     }
 
+ 
     filterProducts = (dispatch,id,curCategory) =>{
 
         dispatch({type : "FILTER_PRODUCTS",payload : id})
@@ -58,7 +59,7 @@ import Consumer from '../util/context'
             <Consumer>
                 {
                     value =>{
-                        const {categories,dispatch,totalProduct} = value
+                        const {categories,dispatch,totalProduct,successMsg} = value
                         const {curCategory} = this.state
                 
                         return (  
@@ -93,8 +94,16 @@ import Consumer from '../util/context'
                                 <button onClick = {this.openCartPage.bind(this,dispatch)} type="button" className="btn btn-success ml-5">Show Your Cart</button>
                             </div>
                             </nav>
+                            {
+                                 successMsg ? 
+                                 <div className="alert alert-success" role="alert">
+                                 You have successfully added the product to the cart!
+                                 </div>
+                                 : null
+                                 
+                            }
                         </div>
-
+                            
                         )
                     }
                 }
