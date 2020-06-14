@@ -48,9 +48,9 @@ import Consumer from '../util/context'
       
     }
 
-    openCartPage = (dispatch) =>{
+    changePage = (dispatch,page) =>{
 
-    dispatch({type: "CHANGE_PAGE",payload : "Cart"})
+    dispatch({type: "CHANGE_PAGE",payload :page})
 
     }
 
@@ -88,10 +88,9 @@ import Consumer from '../util/context'
                                
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0">
-                                <input className="form-control mr-sm-2" type="search" placeholder="Search"/>
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                <button onClick = {this.changePage.bind(this,dispatch,"Admin")} type="button" className="btn btn-warning ml-5">Admin Panel</button>
                                 </form>
-                                <button onClick = {this.openCartPage.bind(this,dispatch)} type="button" className="btn btn-success ml-5">Show Your Cart</button>
+                                <button onClick = {this.changePage.bind(this,dispatch,"Cart")} type="button" className="btn btn-success ml-5">Show Your Cart</button>
                             </div>
                             </nav>
                             {
