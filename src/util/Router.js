@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Consumer from './context'
-import {Navbar,ProductsRenderer,Cart} from '../components'
+import {Navbar,ProductsRenderer,Cart,Admin} from '../components'
 
 
   
@@ -25,6 +25,12 @@ import {Navbar,ProductsRenderer,Cart} from '../components'
                         <Cart/>
                     )
                 }
+            case "Admin" :
+                {
+                    return(
+                        <Admin/>
+                    )
+                }    
             default : {
     
             }
